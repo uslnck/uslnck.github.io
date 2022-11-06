@@ -38,10 +38,10 @@ img {
 
 .main__background {
   /*margin-top: 11px;*/
-  align-self: flex-start;
+  align-self: center;
 }
 
-.main__background--header {
+.main__background-header--header {
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -50,6 +50,7 @@ img {
   color: #2a2367;
   padding-left: 10px;
   padding-top: 15px;
+  align-self: flex-start;
 }
 .main__background--image {
 }
