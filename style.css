@@ -41,6 +41,10 @@ img {
   align-self: center;
 }
 
+.main__background-header {
+  align-self: center;
+}
+
 .main__background-header--header {
   font-style: normal;
   font-weight: 700;
@@ -48,15 +52,16 @@ img {
   line-height: 22px;
   position: absolute;
   color: #2a2367;
+  left: 0;
+  right: 0;
   padding-left: 10px;
   padding-top: 15px;
-  align-self: flex-start;
 }
 .main__background--image {
 }
 
 .main__paragraph {
-  align-self: flex-start;
+  align-self: center;
   /*margin-top: 29px;*/
 }
 
