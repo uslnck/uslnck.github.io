@@ -16,16 +16,7 @@ h1 {
   padding: 0;
 }
 
-.header {
-  display: flex;
-  height: 62px;
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
-  align-items: center;
-}
-
-.button {
+button {
   margin: 0;
   padding: 0;
   background: none;
@@ -36,57 +27,65 @@ h1 {
   color: #6b5af9;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@media (max-width: 500px) {
+  header {
+    display: flex;
+    height: 62px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+  }
 
-.main__background-header {
-  align-self: flex-start;
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
 
-.main__background-header--header {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  position: absolute;
-  color: #2a2367;
-  padding-top: 30px;
-}
+  main div:not(:first-child) {
+    margin-top: 30px;
+  }
 
-.main__paragraph--text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  color: #2a2367;
-}
+  .main__background-header {
+    align-self: flex-start;
+  }
 
-.main__cost-button--button {
-  width: 275px;
-  height: 60px;
-  color: white;
-  background: #6b5af9;
-  border-radius: 5px;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 15px;
-}
+  .main__background-header--header {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    position: absolute;
+    color: #2a2367;
+    padding-top: 30px;
+  }
 
-.main__request-paragraph--text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 137.4%;
-  text-align: center;
-}
+  .main__paragraph--text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2a2367;
+  }
 
-main {
-  margin: 0 10px;
-}
+  .main__cost-button--button {
+    width: 275px;
+    height: 60px;
+    color: white;
+    background: #6b5af9;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 15px;
+  }
 
-main div:not(:first-child) {
-  margin-top: 30px;
+  .main__request-paragraph--text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 137.4%;
+    text-align: center;
+  }
 }
