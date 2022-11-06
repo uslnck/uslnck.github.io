@@ -6,7 +6,14 @@ body {
   font-family: "Montserrat";
 }
 
-img {
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -35,12 +42,11 @@ img {
 }
 
 .main__background {
-  /*margin-top: 11px;*/
   align-self: center;
 }
 
 .main__background-header {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .main__background-header--header {
@@ -50,17 +56,13 @@ img {
   line-height: 22px;
   position: absolute;
   color: #2a2367;
-  left: 0;
-  right: 0;
-  padding-left: 10px;
-  padding-top: 15px;
+  padding-top: 30px;
 }
 .main__background--image {
 }
 
 .main__paragraph {
   align-self: center;
-  /*margin-top: 29px;*/
 }
 
 .main__paragraph--text {
@@ -72,9 +74,6 @@ img {
 
 .main__cost-button {
   align-self: center;
-  /*margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;*/
 }
 
 .main__cost-button--button {
@@ -89,10 +88,6 @@ img {
   line-height: 15px;
 }
 
-.main__request-paragraph {
-  /*margin-top: 9px;*/
-}
-
 .main__request-paragraph--text {
   font-style: normal;
   font-weight: 500;
@@ -102,9 +97,9 @@ img {
 }
 
 main {
-  margin: 25px 10px;
+  margin: 0 10px;
 }
 
-main div {
-  margin: 5px 0;
+main div:not(:first-child) {
+  margin-top: 30px;
 }
