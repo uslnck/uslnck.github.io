@@ -45,10 +45,6 @@ h1 {
   align-self: center;
 }
 
-.main__background-header {
-  align-self: flex-start;
-}
-
 .main__background-header--header {
   font-style: normal;
   font-weight: 700;
@@ -57,8 +53,6 @@ h1 {
   position: absolute;
   color: #2a2367;
   padding-top: 30px;
-}
-.main__background--image {
 }
 
 .main__paragraph {
