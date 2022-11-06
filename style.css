@@ -39,10 +39,11 @@ h1 {
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.main__background {
-  align-self: center;
+.main__background-header {
+  align-self: flex-start;
 }
 
 .main__background-header--header {
@@ -55,19 +56,11 @@ h1 {
   padding-top: 30px;
 }
 
-.main__paragraph {
-  align-self: center;
-}
-
 .main__paragraph--text {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   color: #2a2367;
-}
-
-.main__cost-button {
-  align-self: center;
 }
 
 .main__cost-button--button {
