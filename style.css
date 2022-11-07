@@ -27,7 +27,7 @@ button {
   color: #6b5af9;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1500px) {
   header {
     display: flex;
     height: 62px;
@@ -47,12 +47,14 @@ button {
   main div:not(:first-child) {
     margin-top: 30px;
   }
+  /* ------------------------------------------- */
 
   .main__background-header {
     align-self: flex-start;
+    /*border: 2px solid black;*/
   }
 
-  .main__background-header--header {
+  .main__background-header--text {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -60,8 +62,20 @@ button {
     position: absolute;
     color: #2a2367;
     padding-top: 30px;
+    /*border: 2px solid black;*/
   }
 
+  .main__background {
+    border: 2px solid green;
+    width: 447px;
+  }
+
+  .main__background--image {
+    border: 2px solid rgb(189, 48, 202);
+    width: 100%;
+  }
+
+  /* ------------------------------------------- */
   .main__paragraph--text {
     font-weight: 400;
     font-size: 12px;
