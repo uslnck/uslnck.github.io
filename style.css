@@ -47,11 +47,11 @@ button {
   main div:not(:first-child) {
     margin-top: 30px;
   }
+
   /* ------------------------------------------- */
 
   .main__background-header {
     align-self: flex-start;
-    /*border: 2px solid black;*/
   }
 
   .main__background-header--text {
@@ -62,20 +62,19 @@ button {
     position: absolute;
     color: #2a2367;
     padding-top: 30px;
-    /*border: 2px solid black;*/
   }
 
   .main__background {
-    border: 2px solid green;
-    width: 447px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .main__background--image {
-    border: 2px solid rgb(189, 48, 202);
-    width: 100%;
+    right: 0;
   }
 
   /* ------------------------------------------- */
+
   .main__paragraph--text {
     font-weight: 400;
     font-size: 12px;
