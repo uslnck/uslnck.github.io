@@ -31,7 +31,7 @@ button {
   font-weight: 700;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 359px) {
   *[class*="laptop"] {
     display: none;
   }
@@ -40,11 +40,98 @@ button {
     display: none;
   }
 
+  .wrapper {
+    padding: 0 10px;
+    overflow-x: scroll;
+  }
+
+  header {
+    padding-right: 10px;
+    width: 359px;
+    display: flex;
+    height: 62px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  main {
+    width: 359px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__descriptions * {
+    margin-top: 20px;
+  }
+
+  .main__background--header {
+    padding-right: 11px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    position: relative;
+    color: #2a2367;
+    top: 20px;
+  }
+
+  .main__background--phone-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    top: -30px;
+  }
+
+  .main__descriptions--paragraph-unique {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #2a2367;
+    border: 2px solid firebrick;
+  }
+
+  .main__descriptions--cost-button {
+    display: block;
+    width: 275px;
+    height: 60px;
+    color: white;
+    background: #6b5af9;
+    background-size: cover;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 15px;
+    border: 2px solid firebrick;
+
+    margin-left: 42px;
+  }
+
+  .main__descriptions--paragraph-request {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    border: 2px solid firebrick;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  *[class*="laptop"] {
+    display: none;
+  }
+
+  *[class*="desktop"] {
+    display: none;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+  }
+
   header {
     display: flex;
     height: 62px;
     justify-content: space-between;
-    padding: 0 10px;
     align-items: center;
   }
 
@@ -52,40 +139,46 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 10px;
+    flex: 0 0 100%;
   }
 
-  main div:not(:first-child) {
+  .main__descriptions * {
+    margin-top: 20px;
+  }
+  /*main div:not(:first-child):not(:nth-child(2)) {
     margin-top: 30px;
+  }*/
+
+  .main__background {
+    max-width: 470px;
   }
 
-  .main__background-header {
-    align-self: flex-start;
-  }
-
-  .main__background-header--text {
+  .main__background--header {
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
-    position: absolute;
     color: #2a2367;
-    padding-top: 30px;
+    position: relative;
+    top: 20px;
   }
 
-  .main__background {
+  .main__background--phone-img {
     width: 100%;
-    overflow: hidden;
-    right: 0;
+    height: 100%;
+    display: block;
+    position: relative;
+    top: -30px;
   }
 
-  .main__paragraph--text {
+  .main__descriptions--paragraph-unique {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
     color: #2a2367;
+    border: 2px solid firebrick;
   }
 
-  .main__cost-button--button {
+  .main__descriptions--cost-button {
     width: 275px;
     height: 60px;
     color: white;
@@ -94,17 +187,19 @@ button {
     font-weight: 800;
     font-size: 12px;
     line-height: 15px;
+    border: 2px solid firebrick;
   }
 
-  .main__request-paragraph--text {
+  .main__descriptions--paragraph-request {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
+    border: 2px solid firebrick;
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   *[class*="phone"] {
     display: none;
   }
@@ -113,52 +208,69 @@ button {
     display: none;
   }
 
+  .wrapper {
+    padding: 0 32px;
+  }
+
   header {
     display: flex;
     height: 97px;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10px;
   }
 
   main {
     display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  .main__background {
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
-    margin: 0 10px;
+    min-width: 60%;
   }
 
-  main div:not(:first-child) {
-    margin-top: 40px;
+  .main__descriptions {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;
+    padding-right: 15px;
   }
 
-  .main__background-header--text {
+  .main__descriptions * {
+    margin: 15px 0;
+  }
+
+  .main__background--header {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
     color: #2a2367;
-    padding-top: 30px;
     position: relative;
+    top: 10px;
   }
 
-  .main__background {
-    overflow: hidden;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    left: 35%;
-    z-index: -1;
+  .main__background--laptop-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    right: 50px;
+    top: -30px;
+    max-width: 680px;
   }
 
-  .main__paragraph--text {
+  .main__descriptions--paragraph-unique {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
     color: #2a2367;
-    width: 40%;
   }
 
-  .main__cost-button--button {
-    width: 40%;
+  .main__descriptions--cost-button {
     max-width: 275px;
     height: 60px;
     color: white;
@@ -169,34 +281,14 @@ button {
     line-height: 15px;
   }
 
-  .main__request-paragraph--text {
+  .main__descriptions--paragraph-request {
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    width: 40%;
   }
 }
 
-/*@media (min-width: 1025px) and (max-width: 1439px) {
-  *[class*="phone"] {
-    display: none;
-  }
-
-  *[class*="desktop"] {
-    display: none;
-  }
-
-  .main__background {
-    overflow: hidden;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    left: 35%;
-    z-index: -1;
-  }
-}*/
-
-@media (min-width: 1025px) {
+@media (min-width: 1440px) {
   *[class*="phone"] {
     display: none;
   }
@@ -205,7 +297,7 @@ button {
     display: none;
   }
 
-  body {
+  .wrapper {
     margin: 0 140px;
   }
 
@@ -278,7 +370,7 @@ button {
     margin-top: 40px;
   }
 
-  .main__background-header--text {
+  .main__background--header {
     font-weight: 700;
     font-size: 34px;
     line-height: 44px;
@@ -297,7 +389,7 @@ button {
     z-index: -1;
   }
 
-  .main__paragraph--text {
+  .main__descriptions--paragraph-unique {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -306,7 +398,7 @@ button {
     max-width: 670px;
   }
 
-  .main__cost-button--button {
+  .main__descriptions--cost-button {
     width: 275px;
     height: 60px;
     color: white;
@@ -317,7 +409,7 @@ button {
     line-height: 15px;
   }
 
-  .main__request-paragraph--text {
+  .main__descriptions--paragraph-request {
     font-weight: 600;
     font-size: 14px;
     line-height: 19px;
