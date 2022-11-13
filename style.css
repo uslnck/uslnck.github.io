@@ -46,7 +46,6 @@ button {
   }
 
   header {
-    padding-right: 10px;
     width: 359px;
     display: flex;
     height: 62px;
@@ -58,6 +57,12 @@ button {
     width: 359px;
     display: flex;
     flex-direction: column;
+  }
+
+  .main__descriptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .main__descriptions * {
@@ -87,11 +92,9 @@ button {
     font-size: 12px;
     line-height: 15px;
     color: #2a2367;
-    border: 2px solid firebrick;
   }
 
   .main__descriptions--cost-button {
-    display: block;
     width: 275px;
     height: 60px;
     color: white;
@@ -101,9 +104,6 @@ button {
     font-weight: 800;
     font-size: 12px;
     line-height: 15px;
-    border: 2px solid firebrick;
-
-    margin-left: 42px;
   }
 
   .main__descriptions--paragraph-request {
@@ -111,7 +111,6 @@ button {
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    border: 2px solid firebrick;
   }
 }
 
@@ -139,7 +138,12 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0 0 100%;
+  }
+
+  .main__descriptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .main__descriptions * {
@@ -175,7 +179,6 @@ button {
     font-size: 12px;
     line-height: 15px;
     color: #2a2367;
-    border: 2px solid firebrick;
   }
 
   .main__descriptions--cost-button {
@@ -187,7 +190,6 @@ button {
     font-weight: 800;
     font-size: 12px;
     line-height: 15px;
-    border: 2px solid firebrick;
   }
 
   .main__descriptions--paragraph-request {
@@ -195,7 +197,6 @@ button {
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    border: 2px solid firebrick;
   }
 }
 
