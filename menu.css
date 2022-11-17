@@ -9,6 +9,12 @@ body {
   padding: 0;
 }
 
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
 p {
   margin: 0;
   padding: 0;
@@ -35,10 +41,11 @@ button {
   margin-top: 86px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
 }
 
 .menu__nav--button {
-  padding-bottom: 27px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
@@ -51,17 +58,18 @@ button {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
 }
 
-.menu__address--button {
-  padding-bottom: 27px;
+.menu__address--link {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  text-align: center;
   color: #6b5af9;
+  align-self: center;
 }
 
 @media (max-width: 359px) {
@@ -85,6 +93,7 @@ button {
     justify-content: space-between;
     align-items: center;
   }
+
   .menu {
     width: 359px;
   }
