@@ -4,7 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Millennium</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="millennium.js"></script>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -94,9 +99,7 @@
             продуманной структурой который
             <span class="accent">выделит вас на фоне конкурентов</span>
           </p>
-          <button class="button main__descriptions--cost-button">
-            Узнать стоимость
-          </button>
+          <button class="button unified__cost-button">Узнать стоимость</button>
           <p class="main__descriptions--paragraph-request">
             <span class="accent"
               >Оставьте заявку и получите бесплатную консультацию от
@@ -105,7 +108,25 @@
             об их выдаче в поиске и не только»
           </p>
         </div>
+        <h1 class="main__slider-header">
+          Мы создаем интернет-магазины,
+          <span class="accent">которые продают</span>
+        </h1>
+
+        <button class="button unified__cost-button">Узнать стоимость</button>
       </main>
     </div>
+    <template id="card-template">
+      <div class="card-template__card">
+        <p class="card-template__card--big-number">01</p>
+        <p class="card-template__card--header">Удобный интерфейс</p>
+        <p class="card-template__card--paragraph">
+          Блоковая подача информации, удобные кнопки, карточки товаров, понятное
+          меню и легкая навигация по многостраничному сайту.
+        </p>
+      </div>
+    </template>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   </body>
 </html>
