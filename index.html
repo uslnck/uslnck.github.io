@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Millennium</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="millennium.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script defer src="millennium.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
@@ -14,93 +14,127 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <button class="button header__menu-button">
-          <div class="header__menu-button--phone">
-            <img src="phone--assets/phone--menu.svg" alt="" />
-          </div>
-          <div class="header__menu-button--laptop">
-            <img src="laptop--assets/laptop--menu.svg" alt="" />
-          </div>
-        </button>
-        <div class="header__logo">
-          <div class="header__logo--phone">
-            <img src="phone--assets/phone--logo.svg" alt="" />
-          </div>
-          <div class="header__logo--laptop">
-            <img src="laptop--assets/laptop--logo.svg" alt="" />
-          </div>
-          <div class="header__logo--desktop">
-            <img src="desktop--assets/desktop--logo.svg" alt="" />
-          </div>
-        </div>
-        <button class="button header__call-button">
-          <div class="header__call-button--phone">
-            <img src="phone--assets/phone--call.svg" alt="" />
-          </div>
-          <div class="header__call-button--laptop">
-            <img src="laptop--assets/laptop--call.svg" alt="" />
-          </div>
-        </button>
-        <nav class="header__desktop-nav">
-          <button class="header__desktop-nav--button">Главная</button>
-          <button class="header__desktop-nav--button">Кейсы</button>
-          <button class="header__desktop-nav--button">Цены и отзывы</button>
-          <button class="header__desktop-nav--button">Контакты</button>
-        </nav>
-        <address class="header__desktop-address">
+        <button class="header__burger-menu-button Phone Laptop">
           <img
-            class="header__desktop-address--social"
+            class="header__burger-menu-image Phone Laptop"
+            src="unified--assets/header__burger-menu-button.svg"
+            alt=""
+          />
+        </button>
+        <div class="header__logo-wrapper">
+          <img
+            class="header__logo-image Phone"
+            src="phone--assets/phone--logo.svg"
+            alt=""
+          />
+          <img
+            class="header__logo-image Laptop"
+            src="laptop--assets/laptop--logo.svg"
+            alt=""
+          />
+          <img
+            class="header__logo-image Desktop"
+            src="desktop--assets/desktop--logo.svg"
+            alt=""
+          />
+        </div>
+        <button class="header__call-button Phone Laptop">
+          <img
+            class="header__call-button Phone"
+            src="phone--assets/phone--call.svg"
+            alt=""
+          />
+          <img
+            class="header__call-button Laptop"
+            src="laptop--assets/laptop--call.svg"
+            alt=""
+          />
+        </button>
+        <nav class="header__nav Desktop">
+          <button class="header__nav-button">Главная</button>
+          <button class="header__nav-button">Кейсы</button>
+          <button class="header__nav-button">Цены и отзывы</button>
+          <button class="header__nav-button">Контакты</button>
+        </nav>
+        <address class="header__address Desktop">
+          <img
+            class="header__address-social-image"
             src="desktop--assets/telegram--icon.svg"
             alt=""
           />
           <img
-            class="header__desktop-address--social"
+            class="header__address-social-image"
             src="desktop--assets/whatsapp--icon.svg"
             alt=""
           />
-          <span class="header__desktop-address--main-text"
-            >+ 7 (495) 555 65 65</span
-          >
-          <br /><span class="header__desktop-address--sub-text"
+          <span class="header__address-main-text">+ 7 (495) 555 65 65</span>
+          <br /><span class="header__address-sub-text"
             >Ежедневно с 09:00 до 18:00</span
           >
         </address>
-        <div class="header__desktop-call">
-          <button class="button header__desktop-call--button">
-            Заказать звонок
-          </button>
-        </div>
+        <button class="header__call-button Desktop">Заказать звонок</button>
       </header>
+      <!----------------------------------------------------------->
+      <div class="menu-wrapper hidden">
+        <div class="menu">
+          <button class="menu__close-button">
+            <img
+              class="menu__close-button-image Phone"
+              src="phone--assets/phone__close-button.svg"
+              alt=""
+            />
+            <img
+              class="menu__close-button-image Laptop"
+              src="laptop--assets/laptop__close-button.svg"
+              alt=""
+            />
+          </button>
+          <nav class="menu__nav">
+            <button class="menu__nav-button">Главная</button>
+            <button class="menu__nav-button">Кейсы</button>
+            <button class="menu__nav-button">Цены и отзывы</button>
+            <button class="menu__nav-button">Контакты</button>
+          </nav>
+          <address class="menu__address">
+            <a class="menu__address-link" href="">info@millenium.ru</a>
+            <a class="menu__address-link" href="">
+              +7 (495) 792-66-69<br />
+              пн-пт 10:00–19:00
+            </a>
+          </address>
+        </div>
+      </div>
+      <!----------------------------------------------------------->
       <main class="main">
-        <div class="main__background">
+        <div class="main__background-wrapper">
           <img
-            class="main__background--phone-img"
+            class="main__background-image Phone"
             src="phone--assets/phone--background.png"
             alt=""
           />
           <img
-            class="main__background--laptop-img"
+            class="main__background-image Laptop"
             src="laptop--assets/laptop--background.png"
             alt=""
           />
           <img
-            class="main__background--desktop-img"
+            class="main__background-image Desktop"
             src="desktop--assets/desktop--background.png"
             alt=""
           />
         </div>
-        <div class="main__descriptions">
-          <h1 class="main__descriptions--header">
+        <div class="main__descriptions-wrapper">
+          <h1 class="main__descriptions-header">
             Разработка интернет-магазинов
             <span class="accent">на 1C-Битрикс</span>
           </h1>
-          <p class="main__descriptions--paragraph-unique">
+          <p class="main__descriptions-paragraph-unique">
             Разработаем интернет-магазин за 30 дней с уникальным дизайном и
             продуманной структурой который
             <span class="accent">выделит вас на фоне конкурентов</span>
           </p>
-          <button class="button unified__cost-button">Узнать стоимость</button>
-          <p class="main__descriptions--paragraph-request">
+          <button class="unified-cost-button">Узнать стоимость</button>
+          <p class="main__descriptions-paragraph-request">
             <span class="accent"
               >Оставьте заявку и получите бесплатную консультацию от
               специалиста, полный расчет стоимости разработки и бонус: </span
@@ -108,24 +142,11 @@
             об их выдаче в поиске и не только»
           </p>
         </div>
-        <h1 class="main__slider-header">
-          Мы создаем интернет-магазины,
-          <span class="accent">которые продают</span>
-        </h1>
-
-        <button class="button unified__cost-button">Узнать стоимость</button>
       </main>
+      <div class="fds">kj</div>
+      <div class="fds">kj</div>
+      <div class="fds">kj</div>
     </div>
-    <template id="card-template">
-      <div class="card-template__card">
-        <p class="card-template__card--big-number">01</p>
-        <p class="card-template__card--header">Удобный интерфейс</p>
-        <p class="card-template__card--paragraph">
-          Блоковая подача информации, удобные кнопки, карточки товаров, понятное
-          меню и легкая навигация по многостраничному сайту.
-        </p>
-      </div>
-    </template>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   </body>
