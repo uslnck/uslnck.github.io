@@ -18,13 +18,11 @@ let collapsed = true;
 
 expandButton.addEventListener('click', function () {
   if (collapsed) {
-    expandButtonImage.src =
-      'assets/unified--assets/unified__card-collapse-button.svg';
+    expandButtonImage.src = 'assets/unified/card-collapse-button.svg';
     collapsedCards.classList.add('card-wrapper--expanded');
     collapsed = false;
   } else {
-    expandButtonImage.src =
-      'assets/unified--assets/unified__card-expand-button.svg';
+    expandButtonImage.src = 'assets/unified/card-expand-button.svg';
     collapsedCards.classList.remove('card-wrapper--expanded');
     collapsed = true;
   }
@@ -33,20 +31,18 @@ expandButton.addEventListener('click', function () {
 let burgerMenu = document.querySelector('.menu-wrapper');
 let burgerButton = document.querySelector('.header__burger-menu-button');
 let burgerButtonImage = document.querySelector('.header__burger-menu-image');
+let body = document.body;
 let active = false;
 
 burgerButton.addEventListener('click', function () {
   if (!active) {
     window.scrollTo(0, 0);
-    burgerButtonImage.src =
-      'assets/unified--assets/header__burger-menu-button--active.svg';
+    burgerButtonImage.src = 'assets/unified/burger-menu-button--active.svg';
     burgerMenu.classList.remove('hidden');
     body.classList.add('fixed');
     active = true;
   } else {
-    window.scrollTo(0, 0);
-    burgerButtonImage.src =
-      'assets/unified--assets/header__burger-menu-button.svg';
+    burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
     burgerMenu.classList.add('hidden');
     body.classList.remove('fixed');
     active = false;
@@ -57,27 +53,72 @@ let crossCloseButton = document.querySelector('.menu__close-button');
 
 crossCloseButton.addEventListener('click', function () {
   window.scrollTo(0, 0);
-  burgerButtonImage.src =
-    'assets/unified--assets/header__burger-menu-button.svg';
+  burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
   burgerMenu.classList.add('hidden');
   body.classList.remove('fixed');
   active = false;
 });
 
 let internalMenu = document.querySelector('.menu');
-let body = document.body;
-
-/* if (evt.target !== (internalMenu || internalMenu.children)) */
-
-/* let fixedArea = document.querySelector('.body.fixed'); */
-/* if (evt.target === fixedArea) */
 
 burgerMenu.addEventListener('click', function (evt) {
   if (evt.target !== internalMenu) {
-    burgerButtonImage.src =
-      'assets/unified--assets/header__burger-menu-button.svg';
+    burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
     burgerMenu.classList.add('hidden');
     body.classList.remove('fixed');
     active = false;
   }
 });
+
+let currentX = window.innerWidth;
+window.addEventListener('resize', handleResize);
+
+function handleResize() {
+  let x = window.innerWidth;
+
+  if ((currentX >= 1440) & (active === true)) {
+    burgerMenu.classList.add('hidden');
+    body.classList.remove('fixed');
+  }
+  if ((active === true) & (currentX < 1440)) {
+    burgerMenu.classList.remove('hidden');
+    body.classList.add('fixed');
+  }
+  currentX = x;
+}
+
+let benefitsButton = document.getElementById('button-to-benefits');
+let benefitsSection = document.getElementById('benefits-section');
+let aboutUsSection = document.getElementById('about-us-section');
+
+benefitsButton.addEventListener('click', function () {
+  burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
+  burgerMenu.classList.add('hidden');
+  body.classList.remove('fixed');
+  active = false;
+
+  benefitsSection.scrollIntoView();
+
+  expandButtonImage.src = 'assets/unified/card-collapse-button.svg';
+  collapsedCards.classList.add('card-wrapper--expanded');
+  collapsed = false;
+});
+
+mainButton.addEventListener('click', function () {
+  burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
+  burgerMenu.classList.add('hidden');
+  body.classList.remove('fixed');
+  active = false;
+
+  aboutUsSection.scrollIntoView();
+});
+
+/* //TODO add somewhere
+let menuDisplayState = getElementDisplayState(burgerMenu);
+function getElementDisplayState(el) {
+  let style = window.getComputedStyle(el);
+  console.log(style.display);
+  console.log(active);
+  return style.display;
+}
+*/

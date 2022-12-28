@@ -18,36 +18,36 @@
         <button class="header__burger-menu-button Phone Laptop">
           <img
             class="header__burger-menu-image Phone Laptop"
-            src="assets/unified--assets/header__burger-menu-button.svg"
+            src="assets/unified/burger-menu-button.svg"
             alt=""
           />
         </button>
         <div class="header__logo-wrapper">
           <img
             class="header__logo-image Phone"
-            src="assets/phone--assets/phone--logo.svg"
+            src="assets/phone/millennium-logo.svg"
             alt=""
           />
           <img
             class="header__logo-image Laptop"
-            src="assets/laptop--assets/laptop--logo.svg"
+            src="assets/laptop/millennium-logo.svg"
             alt=""
           />
           <img
             class="header__logo-image Desktop"
-            src="assets/desktop--assets/desktop--logo.svg"
+            src="assets/desktop/millennium-logo.svg"
             alt=""
           />
         </div>
         <button class="header__call-button Phone Laptop">
           <img
             class="header__call-button Phone"
-            src="assets/phone--assets/phone--call.svg"
+            src="assets/phone/call-button.svg"
             alt=""
           />
           <img
             class="header__call-button Laptop"
-            src="assets/laptop--assets/laptop--call.svg"
+            src="assets/laptop/call-button.svg"
             alt=""
           />
         </button>
@@ -60,12 +60,12 @@
         <address class="header__address Desktop">
           <img
             class="header__address-social-image"
-            src="assets/desktop--assets/telegram--icon.svg"
+            src="assets/desktop/telegram-icon.svg"
             alt=""
           />
           <img
             class="header__address-social-image"
-            src="assets/desktop--assets/whatsapp--icon.svg"
+            src="assets/desktop/whatsapp-icon.svg"
             alt=""
           />
           <span class="header__address-main-text">+ 7 (495) 555 65 65</span>
@@ -76,23 +76,27 @@
         <button class="header__call-button Desktop">Заказать звонок</button>
       </header>
 
-      <div class="menu-wrapper hidden Phone Laptop">
+      <div class="menu-wrapper hidden Phone Laptop Desktop">
         <div class="menu">
           <button class="menu__close-button">
             <img
               class="menu__close-button-image Phone"
-              src="assets/phone--assets/phone__close-button.svg"
+              src="assets/phone/menu-close-button.svg"
               alt=""
             />
             <img
               class="menu__close-button-image Laptop"
-              src="assets/laptop--assets/laptop__close-button.svg"
+              src="assets/laptop/menu-close-button.svg"
               alt=""
             />
           </button>
           <nav class="menu__nav">
-            <button class="menu__nav-button">Главная</button>
-            <button class="menu__nav-button">Кейсы</button>
+            <button class="menu__nav-button" id="button-to-main">
+              Главная
+            </button>
+            <button class="menu__nav-button" id="button-to-benefits">
+              Benefits
+            </button>
             <button class="menu__nav-button">Цены и отзывы</button>
             <button class="menu__nav-button">Контакты</button>
           </nav>
@@ -107,7 +111,7 @@
       </div>
 
       <main class="main">
-        <section class="main__section-1">
+        <section class="main__about-us-section" id="about-us-section">
           <h1 class="main__descriptions-header">
             Разработка интернет-магазинов
             <span class="accent">на 1C-Битрикс</span>
@@ -115,17 +119,17 @@
           <div class="main__background-image-wrapper">
             <img
               class="main__background-image Phone"
-              src="assets/phone--assets/phone--background.png"
+              src="assets/phone/notebook.png"
               alt=""
             />
             <img
               class="main__background-image Laptop"
-              src="assets/laptop--assets/laptop--background.png"
+              src="assets/laptop/notebook.png"
               alt=""
             />
             <img
               class="main__background-image Desktop"
-              src="assets/desktop--assets/desktop--background.png"
+              src="assets/desktop/notebook.png"
               alt=""
             />
           </div>
@@ -144,7 +148,7 @@
           </p>
         </section>
 
-        <section class="main__section-2">
+        <section class="main__benefits-section" id="benefits-section">
           <h1 class="main__card-header">
             Мы создаем интернет-магазины,
             <span class="accent">которые продают</span>
@@ -275,7 +279,7 @@
           <button class="card-expand-button Laptop Desktop">
             <img
               class="card-expand-button--expanded"
-              src="assets/unified--assets/unified__card-expand-button.svg"
+              src="assets/unified/card-expand-button.svg"
             />
           </button>
 
@@ -283,6 +287,41 @@
         </section>
         <section class="main__section-3"></section>
       </main>
+    </div>
+
+    <div class="order-wrapper">
+      <div class="order">
+        <button class="order__close-button">
+          <img
+            class="order__close-button-image"
+            src="assets/unified/order-close-button.svg"
+            alt=""
+          />
+        </button>
+        <h1 class="order__header">Заявка на консультацию</h1>
+        <form class="order__form">
+          <label for="fname">Ваше имя</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Введите ваше имя"
+          />
+          <label for="lname">Номер телефона</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="+ 7 (999) 999 99 99"
+          />
+          <button class="order__send-button">Отправить</button>
+          <p class="order__confidentiality-paragraph">
+            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
+            персональных данных и соглашаюсь c политикой конфиденциальности
+          </p>
+          <img class="order__image" src="" />
+        </form>
+      </div>
     </div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>

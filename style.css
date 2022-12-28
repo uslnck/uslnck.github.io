@@ -83,6 +83,13 @@ a:hover {
   font-size: 12px;
   line-height: 15px;
   align-self: center;
+  transition: opacity 0.3s ease, scale 0.5s ease;
+}
+
+.unified-cost-button:hover {
+  transition: opacity 0.3s ease, scale 0.5s ease;
+  opacity: 0.8;
+  scale: 2;
 }
 
 @media (max-width: 359px) {
@@ -108,13 +115,13 @@ a:hover {
     gap: 40px;
   }
 
-  .main__section-1 {
+  .main__about-us-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
-  .main__section-2 {
+  .main__benefits-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -312,13 +319,13 @@ a:hover {
     gap: 40px;
   }
 
-  .main__section-1 {
+  .main__about-us-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
-  .main__section-2 {
+  .main__benefits-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -342,6 +349,7 @@ a:hover {
 
   .main__background-image {
     width: 100%;
+    /*content: url('assets/phone/notebook.png');*/
   }
 
   .main__descriptions-paragraph-unique {
@@ -517,14 +525,14 @@ a:hover {
     gap: 90px;
   }
 
-  .main__section-1 {
+  .main__about-us-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
     width: 45%;
   }
 
-  .main__section-2 {
+  .main__benefits-section {
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -709,6 +717,49 @@ a:hover {
   }
 }
 
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+
+.order-wrapper {
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+}
+
+.order {
+  position: relative;
+  top: 62px;
+  height: 100%;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px -5px 2px -5px rgba(45, 45, 45, 0.7);
+  left: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order__close-button {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+/****************************************************/
+
 @media (min-width: 1440px) {
   .Desktop {
     display: block;
@@ -782,14 +833,14 @@ a:hover {
     gap: 90px;
   }
 
-  .main__section-1 {
+  .main__about-us-section {
     display: flex;
     flex-direction: column;
     gap: 30px;
     width: 45%;
   }
 
-  .main__section-2 {
+  .main__benefits-section {
     display: flex;
     flex-direction: column;
     gap: 0px;
