@@ -83,13 +83,12 @@ a:hover {
   font-size: 12px;
   line-height: 15px;
   align-self: center;
-  transition: opacity 0.3s ease, scale 0.5s ease;
+  transition: opacity 0.1s ease, scale 0.2s ease;
 }
 
 .unified-cost-button:hover {
-  transition: opacity 0.3s ease, scale 0.5s ease;
-  opacity: 0.8;
-  scale: 2;
+  opacity: 0.95;
+  scale: 1.03;
 }
 
 @media (max-width: 359px) {
@@ -97,9 +96,17 @@ a:hover {
     display: block;
   }
 
-  .wrapper {
-    padding: 0 10px;
+  body {
     overflow-x: scroll;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    width: 360px;
+    position: relative;
+    gap: 30px;
   }
 
   header {
@@ -124,7 +131,6 @@ a:hover {
   .main__benefits-section {
     display: flex;
     flex-direction: column;
-    gap: 30px;
   }
 
   .main__descriptions-header {
@@ -139,12 +145,12 @@ a:hover {
 
   .main__background-image-wrapper {
     align-self: center;
-    width: 100%;
-    max-width: 400px;
+    width: 340px;
   }
 
   .main__background-image {
     width: 100%;
+    /*content: url('assets/phone/notebook.png');*/
   }
 
   .main__descriptions-paragraph-unique {
@@ -174,11 +180,12 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100%;
+    /*min-height: 10000;*/
   }
 
   .menu {
     position: relative;
-    top: 0px;
+    top: 62px;
     height: 100%;
     background-color: white;
     width: 100%;
@@ -197,11 +204,11 @@ a:hover {
 
   .menu__nav {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     top: 50px;
-    gap: 30px;
+    flex-direction: column;
+    width: 300px;
   }
 
   .menu__nav-button {
@@ -209,6 +216,8 @@ a:hover {
     font-size: 14px;
     line-height: 17px;
     color: #2a2367;
+    height: 50px;
+    width: 100%;
   }
 
   .menu__address {
@@ -228,19 +237,21 @@ a:hover {
   }
 
   .swiper-container {
-    height: 200px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 50px;
   }
 
   .swiper-slide {
-    display: flex;
-    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 25px;
   }
 
   .slide {
-    height: 100%;
-    max-width: 450px;
-    margin: 0 auto;
+    height: 200px;
+    max-width: 300px;
     background: #ffffff;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -286,8 +297,7 @@ a:hover {
   }
 
   .swiper-pagination {
-    top: 205px;
-    display: block;
+    top: 235px;
   }
 }
 
@@ -296,14 +306,24 @@ a:hover {
     display: block;
   }
 
+  /*
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div> анимировать
+                </div>
+  */
+
   .wrapper {
     margin: 0 auto;
     padding: 0 10px;
     max-width: 500px;
     overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    /*height: 100%;*/
   }
 
   header {
@@ -403,11 +423,11 @@ a:hover {
 
   .menu__nav {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     top: 50px;
-    gap: 30px;
+    flex-direction: column;
+    width: 300px;
   }
 
   .menu__nav-button {
@@ -415,6 +435,8 @@ a:hover {
     font-size: 14px;
     line-height: 17px;
     color: #2a2367;
+    height: 50px;
+    width: 100%;
   }
 
   .menu__address {
@@ -434,8 +456,11 @@ a:hover {
   }
 
   .swiper-container {
-    height: 200px;
+    /*overflow: hidden;*/
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
   }
 
   .swiper-slide {
@@ -444,7 +469,7 @@ a:hover {
   }
 
   .slide {
-    height: 100%;
+    height: 200px;
     max-width: 450px;
     margin: 0 auto;
     background: #ffffff;
@@ -492,8 +517,7 @@ a:hover {
   }
 
   .swiper-pagination {
-    top: 205px;
-    display: block;
+    top: 210px;
   }
 }
 
@@ -597,13 +621,10 @@ a:hover {
 
   .menu__nav {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
     align-items: flex-start;
-    gap: 30px;
-    top: 75px;
-    left: 15px;
-    /*почему на 25px сдвигается при inline-flex?*/
+    top: 40px;
+    flex-direction: column;
   }
 
   .menu__nav-button {
@@ -611,6 +632,10 @@ a:hover {
     font-size: 14px;
     line-height: 17px;
     color: #2a2367;
+    height: 50px;
+    width: 100%;
+    padding-left: 40px;
+    text-align: inherit;
   }
 
   .menu__address {
@@ -923,10 +948,6 @@ a:hover {
     line-height: 15px;
     color: #2a2367;
   }
-
-  /*------------------------------------------------------*/
-  /*------------------------------------------------------*/
-  /*------------------------------------------------------*/
 
   .card {
     background: #ffffff;

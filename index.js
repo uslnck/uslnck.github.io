@@ -4,7 +4,7 @@ const swiper = new Swiper('.swiper-container', {
     clickable: true,
   },
   breakpoints: {
-    360: {
+    0: {
       slidesPerView: 'auto',
       spaceBetween: 30,
     },
@@ -70,47 +70,54 @@ burgerMenu.addEventListener('click', function (evt) {
   }
 });
 
-let currentX = window.innerWidth;
 window.addEventListener('resize', handleResize);
 
 function handleResize() {
-  let x = window.innerWidth;
-
-  if ((currentX >= 1440) & (active === true)) {
+  if (active === true && window.matchMedia('(min-width: 1440px)').matches) {
     burgerMenu.classList.add('hidden');
     body.classList.remove('fixed');
   }
-  if ((active === true) & (currentX < 1440)) {
+  if (active === true && window.matchMedia('(max-width: 1439px)').matches) {
     burgerMenu.classList.remove('hidden');
     body.classList.add('fixed');
   }
-  currentX = x;
 }
 
 let benefitsButton = document.getElementById('button-to-benefits');
+let mainButton = document.getElementById('button-to-about-us');
+
 let benefitsSection = document.getElementById('benefits-section');
 let aboutUsSection = document.getElementById('about-us-section');
 
-benefitsButton.addEventListener('click', function () {
+benefitsButton.addEventListener('click', function (evt) {
+  evt.stopPropagation();
   burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
   burgerMenu.classList.add('hidden');
   body.classList.remove('fixed');
   active = false;
 
-  benefitsSection.scrollIntoView();
-
-  expandButtonImage.src = 'assets/unified/card-collapse-button.svg';
-  collapsedCards.classList.add('card-wrapper--expanded');
-  collapsed = false;
+  if (!window.matchMedia('(max-width: 767px)').matches) {
+    expandButtonImage.src = 'assets/unified/card-collapse-button.svg';
+    collapsedCards.classList.add('card-wrapper--expanded');
+    collapsed = false;
+  }
+  benefitsSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 });
 
-mainButton.addEventListener('click', function () {
+mainButton.addEventListener('click', function (evt) {
+  evt.stopPropagation();
   burgerButtonImage.src = 'assets/unified/burger-menu-button.svg';
   burgerMenu.classList.add('hidden');
   body.classList.remove('fixed');
   active = false;
 
-  aboutUsSection.scrollIntoView();
+  aboutUsSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
 });
 
 /* //TODO add somewhere
@@ -120,5 +127,31 @@ function getElementDisplayState(el) {
   console.log(style.display);
   console.log(active);
   return style.display;
+}
+*/
+
+/* //TODO add somewhere
+function detectBrowser() {
+  let userAgent = navigator.userAgent;
+  let browserName;
+
+  if (userAgent.match(/chrome|chromium|crios/i)) {
+    browserName = 'Chrome';
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    browserName = 'Firefox';
+  } else if (userAgent.match(/safari/i)) {
+    browserName = 'Safari';
+  } else if (userAgent.match(/opr\//i)) {
+    browserName = 'Opera';
+  } else if (userAgent.match(/edg/i)) {
+    browserName = 'Edge';
+  } else if (userAgent.match(/android/i)) {
+    browserName = 'Android';
+  } else if (userAgent.match(/iphone/i)) {
+    browserName = 'iPhone';
+  } else {
+    browserName = 'Unknown';
+  }
+  console.log(browserName);
 }
 */
