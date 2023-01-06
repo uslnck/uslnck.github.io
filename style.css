@@ -2899,6 +2899,7 @@
   }
 
   .header__address-main-text {
+    display: inline-block;
     font-size: 24px;
     font-weight: 800;
     line-height: 29px;
