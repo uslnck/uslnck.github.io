@@ -175,8 +175,10 @@ let orderCloseButton = document.querySelector('.order__close-button');
 orderCloseButton.addEventListener('click', function (evt) {
   evt.stopPropagation();
   orderMenu.classList.add('hidden');
-  body.classList.remove('fixed');
   orderActive = false;
+  if (!menuActive) {
+    body.classList.remove('fixed');
+  }
 });
 
 let internalOrder = document.querySelector('.order');
@@ -185,8 +187,10 @@ orderMenu.addEventListener('click', function (evt) {
   evt.stopPropagation();
   if (evt.target === orderMenu) {
     orderMenu.classList.add('hidden');
-    body.classList.remove('fixed');
     orderActive = false;
+    if (!menuActive) {
+      body.classList.remove('fixed');
+    }
   }
 });
 
