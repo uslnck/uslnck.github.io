@@ -6,6 +6,7 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <script defer src="index.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="test.scss" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
@@ -41,36 +42,49 @@
         </div>
         <button class="header__call-button Phone Laptop">
           <img
-            class="header__call-button Phone"
+            class="header__call-button-image Phone"
             src="assets/phone/call-button.svg"
             alt=""
           />
           <img
-            class="header__call-button Laptop"
+            class="header__call-button-image Laptop"
             src="assets/laptop/call-button.svg"
             alt=""
           />
         </button>
         <nav class="header__nav Desktop">
-          <button class="header__nav-button">Главная</button>
-          <button class="header__nav-button">Кейсы</button>
-          <button class="header__nav-button">Цены и отзывы</button>
-          <button class="header__nav-button">Контакты</button>
+          <button class="header__nav-button button-to-about-us">Главная</button>
+          <button class="header__nav-button button-to-benefits">
+            Benefits
+          </button>
+          <button class="header__nav-button button-to-reviews">
+            Цены и отзывы
+          </button>
+          <button class="header__nav-button button-to-contacts">
+            Контакты
+          </button>
         </nav>
         <address class="header__address Desktop">
-          <img
-            class="header__address-social-image"
-            src="assets/desktop/telegram-icon.svg"
-            alt=""
-          />
-          <img
-            class="header__address-social-image"
-            src="assets/desktop/whatsapp-icon.svg"
-            alt=""
-          />
-          <span class="header__address-main-text">+ 7 (495) 555 65 65</span>
-          <br /><span class="header__address-sub-text"
-            >Ежедневно с 09:00 до 18:00</span
+          <a
+            href="https://web.telegram.org/"
+            class="header__address-telegram-link"
+            ><img
+              class="header__address-telegram-image"
+              src="assets/desktop/telegram-icon.svg"
+              alt="Our Telegram"
+          /></a>
+          <a
+            href="https://www.whatsapp.com/"
+            class="header__address-whatsapp-link"
+            ><img
+              class="header__address-whatsapp-image"
+              src="assets/desktop/whatsapp-icon.svg"
+              alt="Our WhatsApp"
+          /></a>
+          <a href="tel:+74957926669" class="header__address-main-text"
+            >+ 7 (495) 555 65 65 <br /><span class="header__address-sub-text"
+              >Ежедневно с 09:00 до 18:00</span
+            ></a
           >
         </address>
         <button class="header__call-button Desktop">Заказать звонок</button>
@@ -91,18 +105,22 @@
             />
           </button>
           <nav class="menu__nav">
-            <button class="menu__nav-button" id="button-to-about-us">
-              Главная
-            </button>
-            <button class="menu__nav-button" id="button-to-benefits">
+            <button class="menu__nav-button button-to-about-us">Главная</button>
+            <button class="menu__nav-button button-to-benefits">
               Benefits
             </button>
-            <button class="menu__nav-button">Цены и отзывы</button>
-            <button class="menu__nav-button">Контакты</button>
+            <button class="menu__nav-button button-to-reviews">
+              Цены и отзывы
+            </button>
+            <button class="menu__nav-button button-to-contacts">
+              Контакты
+            </button>
           </nav>
           <address class="menu__address">
-            <a class="menu__address-link" href="">info@millenium.ru</a>
-            <a class="menu__address-link" href="">
+            <a href="mailto:info@millenium.ru" class="menu__address-link"
+              >info@millenium.ru</a
+            >
+            <a href="tel:+74957926669" class="menu__address-link">
               +7 (495) 792-66-69<br />
               пн-пт 10:00–19:00
             </a>
@@ -110,71 +128,36 @@
         </div>
       </div>
 
-      <!--<div class="order-wrapper">
-        <div class="order">
-          <button class="order__close-button">
-            <img
-              class="order__close-button-image"
-              src="assets/unified/order-close-button.svg"
-              alt=""
-            />
-          </button>
-          <h1 class="order__header">Заявка на консультацию</h1>
-          <form class="order__form">
-            <label for="fname">Ваше имя</label>
-            <input
-              type="text"
-              id="fname"
-              name="fname"
-              placeholder="Введите ваше имя"
-            />
-            <label for="lname">Номер телефона</label>
-            <input
-              type="text"
-              id="lname"
-              name="lname"
-              placeholder="+ 7 (999) 999 99 99"
-            />
-            <button class="order__send-button">Отправить</button>
-            <p class="order__confidentiality-paragraph">
-              Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-              персональных данных и соглашаюсь c политикой конфиденциальности
-            </p>
-            <img class="order__image" src="" />
-          </form>
-        </div>
-      </div>-->
-
       <main class="main">
-        <section class="main__about-us-section" id="about-us-section">
-          <h1 class="main__descriptions-header">
+        <section class="main__about-us-section about-us-section">
+          <h1 class="about-us-section__header">
             Разработка интернет-магазинов
             <span class="accent">на 1C-Битрикс</span>
           </h1>
-          <div class="main__background-image-wrapper">
+          <div class="about-us-section__background-image-wrapper">
             <img
-              class="main__background-image Phone"
+              class="about-us-section__background-image Phone"
               src="assets/phone/notebook.png"
               alt=""
             />
             <img
-              class="main__background-image Laptop"
+              class="about-us-section__background-image Laptop"
               src="assets/laptop/notebook.png"
               alt=""
             />
             <img
-              class="main__background-image Desktop"
+              class="about-us-section__background-image Desktop"
               src="assets/desktop/notebook.png"
               alt=""
             />
           </div>
-          <p class="main__descriptions-paragraph-unique">
+          <p class="about-us-section__paragraph-unique">
             Разработаем интернет-магазин за 30 дней с уникальным дизайном и
             продуманной структурой который
             <span class="accent">выделит вас на фоне конкурентов</span>
           </p>
           <button class="unified-cost-button">Узнать стоимость</button>
-          <p class="main__descriptions-paragraph-request">
+          <p class="about-us-section__paragraph-request">
             <span class="accent"
               >Оставьте заявку и получите бесплатную консультацию от
               специалиста, полный расчет стоимости разработки и бонус: </span
@@ -183,15 +166,17 @@
           </p>
         </section>
 
-        <section class="main__benefits-section" id="benefits-section">
-          <h1 class="main__card-header">
+        <section class="main__benefits-section benefits-section">
+          <h1 class="benefits-section__header">
             Мы создаем интернет-магазины,
             <span class="accent">которые продают</span>
           </h1>
 
-          <div class="swiper-container Phone">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
+          <div
+            class="benefits-section__swiper-container swiper-container Phone"
+          >
+            <div class="benefits-section__swiper-wrapper swiper-wrapper">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">01</p>
                   <p class="slide__header">Удобный интерфейс</p>
@@ -202,7 +187,7 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">02</p>
                   <p class="slide__header">Продающая структура</p>
@@ -212,7 +197,7 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">03</p>
                   <p class="slide__header">Адаптивность</p>
@@ -223,7 +208,7 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">04</p>
                   <p class="slide__header">Уникальный дизайн</p>
@@ -234,7 +219,7 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">05</p>
                   <p class="slide__header">Защита и безопасность</p>
@@ -244,7 +229,7 @@
                   </p>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <div class="benefits-section__swiper-slide swiper-slide">
                 <div class="slide">
                   <p class="slide__big-number">06</p>
                   <p class="slide__header">SEO оптимизация</p>
@@ -255,11 +240,14 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
-            <button class="unified-cost-button">Узнать стоимость</button>
+            <div
+              class="benefits-section__swiper-pagination swiper-pagination"
+            ></div>
           </div>
 
-          <div class="card-container Laptop Desktop">
+          <button class="unified-cost-button Phone">Узнать стоимость</button>
+
+          <div class="benefits-section__card-container Laptop Desktop">
             <div class="card-wrapper--collapsed">
               <div class="card">
                 <p class="card__big-number">01</p>
@@ -314,18 +302,521 @@
             </div>
             <button class="card-expand-button">
               <img
-                class="card-expand-button--expanded"
+                class="card-expand-button-image"
                 src="assets/unified/card-expand-button.svg"
+                alt=""
               />
             </button>
             <button class="unified-cost-button">Узнать стоимость</button>
           </div>
         </section>
 
-        <section class="main__section-3"></section>
+        <section class="main__you-get-section you-get-section">
+          <h1 class="you-get-section__header">
+            Что вы <span class="accent">получаете?</span>
+          </h1>
+
+          <div class="you-get-section__catalog-wrapper">
+            <div class="you-get-section__image-wrapper">
+              <img
+                class="you-get-section__image"
+                src="assets/unified/mobile-heart.png"
+                alt=""
+              />
+            </div>
+            <ul class="you-get-section__list">
+              Каталог товаров
+              <li class="you-get-section__list-item">
+                возможность выгружать свои товары в неограниченном количестве
+              </li>
+              <li class="you-get-section__list-item">
+                добавлять и редактировать описание товаров
+              </li>
+              <li class="you-get-section__list-item">
+                сортировать товары по заданным критериям
+              </li>
+              <li class="you-get-section__list-item">
+                моментальная оплата товара или оформление при помощи добавления
+                корзины
+              </li>
+            </ul>
+          </div>
+
+          <div class="you-get-section__order-wrapper">
+            <div class="you-get-section__image-wrapper">
+              <img
+                class="you-get-section__image"
+                src="assets/unified/mobile-human.png"
+                alt=""
+              />
+            </div>
+            <ul class="you-get-section__list">
+              Оформление заказа
+              <li class="you-get-section__list-item">личный кабинет</li>
+              <li class="you-get-section__list-item">
+                корзина с отображением выбранных товаров
+              </li>
+              <li class="you-get-section__list-item">
+                оформление заказа с указанием контактных данных
+              </li>
+              <li class="you-get-section__list-item">
+                возможность приема онлайн-платежей
+              </li>
+              <li class="you-get-section__list-item">
+                использование купонов, скидок и специальных предложений
+              </li>
+            </ul>
+          </div>
+
+          <div class="you-get-section__integrations-wrapper">
+            <div class="you-get-section__image-wrapper">
+              <img
+                class="you-get-section__image"
+                src="assets/unified/notebook-human.png"
+                alt=""
+              />
+            </div>
+            <ul class="you-get-section__list">
+              Интеграции
+              <li class="you-get-section__list-item">
+                1С, Мой склад (выгрузка товаров на сайт, полная синхронизация)
+              </li>
+              <li class="you-get-section__list-item">
+                Маркетплейсы (Яндекс.Маркет, Wildberries, Goods, Ozon)
+              </li>
+              <li class="you-get-section__list-item">
+                Интеграция со службами доставки СДЭК, Почта России
+              </li>
+            </ul>
+          </div>
+
+          <div class="you-get-section__crm-wrapper">
+            <div class="you-get-section__image-wrapper">
+              <img
+                class="you-get-section__image"
+                src="assets/unified/notebook-people.png"
+                alt=""
+              />
+            </div>
+            <ul class="you-get-section__list">
+              <abbr
+                class="CRM-abbr"
+                title="Customer Relationship Management — система управления содержимым"
+                >CRM</abbr
+              >
+              <li class="you-get-section__list-item">
+                фиксация и отслеживание поступивших заявок
+              </li>
+              <li class="you-get-section__list-item">уведомления о заказах</li>
+              <li class="you-get-section__list-item">отчетность магазина</li>
+            </ul>
+          </div>
+
+          <button
+            class="unified-cost-button"
+            id="you-get-section__unified-cost-button"
+          >
+            Узнать стоимость
+          </button>
+        </section>
+
+        <section class="main__awards-section awards-section">
+          <div class="awards-section__inner-wrapper">
+            <div class="awards-section__award-image-wrapper">
+              <img
+                class="awards-section__award-image"
+                src="assets/unified/award.png"
+                alt=""
+              />
+            </div>
+            <div class="awards-section__cert-wrapper Desktop">
+              <p class="awards-section__cert-paragraph">Сертификат</p>
+              <p class="awards-section__partner-paragraph">
+                Золотой сертифицированный партнер битрикс
+              </p>
+              <img
+                class="awards-section__cert-image Desktop"
+                src="assets/unified/cert-orange.png"
+                alt=""
+              />
+            </div>
+            <div class="awards-section__cert-wrapper Desktop">
+              <p class="awards-section__cert-paragraph">Сертификат</p>
+              <p class="awards-section__partner-paragraph">
+                Прграммы мониторинга качества внедрений
+              </p>
+              <img
+                class="awards-section__cert-image Desktop"
+                src="assets/unified/cert-red.png"
+                alt=""
+              />
+            </div>
+            <p class="awards-section__cert-paragraph Phone Laptop">
+              Сертификат
+            </p>
+            <p class="awards-section__partner-paragraph Phone Laptop">
+              Золотой сертифицированный партнер битрикс
+            </p>
+
+            <div
+              class="awards-section__swiper-container swiper-container Phone Laptop"
+            >
+              <div class="awards-section__swiper-wrapper swiper-wrapper">
+                <div class="awards-section__swiper-slide swiper-slide">
+                  <div class="awards-section__slide">
+                    <img
+                      class="awards-section__swiper-slide-image"
+                      src="assets/unified/cert-orange.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="awards-section__swiper-slide swiper-slide">
+                  <div class="awards-section__slide">
+                    <img
+                      class="awards-section__swiper-slide-image"
+                      src="assets/unified/cert-red.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="awards-section__swiper-pagination swiper-pagination"
+              ></div>
+            </div>
+          </div>
+        </section>
+        <section class="main__research-section research-section">
+          <h1 class="research-section__header">
+            Исследуем <span class="accent">бизнес</span>
+          </h1>
+          <div class="research-section__introduction-wrapper">
+            <p class="research-section__clients-paragraph">
+              Каждый клиент – своя история. Мы не берем шаблонные решения, а
+              исследуем рынок конкретно под ваши цели и задачи.<br /><br />Сделать
+              интернет-магазин с нуля непросто. Нужен сайт с качественной
+              разработкой дизайна, который не будет отвлекать от сути,
+              наполнением и рабочими модулями. Кроме этого, для успешного
+              запуска электронной торговой площадки владельцу бизнеса требуется
+              найти поставщиков, выбрать товарные позиции, просчитать
+              рентабельность, уладить другие организационные вопросы вне
+              сети.<br /><br />Создание интернет-магазина лучше делегировать на
+              профессионалов. Мы возьмем на себя вопросы по разработке
+              интернет-магазина под ключ. Специалисты компании предоставляют
+              заказчику готовый продающий сайт. Он уже наполнен контентом,
+              ориентирован на конечного потребителя и интуитивно понятен для
+              заказчика.
+            </p>
+            <div class="research-section__introduction-image-wrapper">
+              <img
+                class="research-section__circles-image"
+                src="assets/unified/circles.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <h2 class="research-section__stages-header">Этапы</h2>
+          <ol class="research-section__stages-list">
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">1</span>Маркетинговый анализ
+                бизнеса
+              </h3>
+              <p class="stage__paragraph">
+                На предварительном этапе мы выясняем специфику вашего бизнеса,
+                товаров. Отмечаем ваши преимущества и уникальные предложения,
+                изучаем ожидания и потребности целевой аудитории, рассматриваем
+                ближайшее конкурентное окружение.<br /><br />На основании
+                полученных данных мы разрабатываем прототип интернет-магазина,
+                пишем техническое ТЗ для специалистов, готовим рекомендации по
+                текстовому наполнению с учетом требований SEO, разрабатываем
+                план по внешней и внутренней оптимизации сайта. Также мы создаем
+                набор готовых элементов для пользовательского интерфейса.
+              </p>
+              <div class="stage__image-wrapper">
+                <img
+                  class="stage__image Phone"
+                  src="assets/phone/page-template.png"
+                  alt=""
+                />
+                <img
+                  class="stage__image Laptop Desktop"
+                  src="assets/unified/page-template.png"
+                  alt=""
+                />
+              </div>
+            </li>
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">2</span>Привлекательный дизайн
+              </h3>
+              <p class="stage__paragraph">
+                Интерфейс сайта будет соответствовать современным требованиям и
+                отвечать ожиданиям целевой аудитории. Опытные специалисты
+                Millenium создадут UX-дизайн, отталкиваясь от данных анализа
+                пользовательского поведения, что позволит в несколько раз
+                увеличить конверсию.<br /><br />Мы подберем оптимальные цветовые
+                сочетания (основной, дополнительные, акцентные цвета), уделим
+                внимание четкости графики, наглядности интерфейса, понятной и
+                лаконичной визуализации.
+              </p>
+              <div class="stage__image-wrapper">
+                <img
+                  class="stage__image Phone"
+                  src="assets/phone/shop-template.png"
+                  alt=""
+                />
+                <img
+                  class="stage__image Laptop Desktop"
+                  src="assets/unified/shop-template.png"
+                  alt=""
+                />
+              </div>
+            </li>
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">3</span>Профессиональная
+                верстка
+              </h3>
+              <p class="stage__paragraph">
+                Мы производим верстку по стандарту Pixel Perfect, который
+                предполагает точное соответствие сверстанных страниц
+                дизайн-макету. Наши специалисты напишут чистый код с
+                двухфакторной проверкой, позволяющий обеспечить высокую скорость
+                загрузки на любых браузерах и электронных устройствах
+                (десктопных и мобильных).<br /><br />Профессиональная адаптивная
+                верстка является важным условием бесперебойной надежной работы
+                сайта на протяжении длительного времени.
+              </p>
+              <div class="stage__image-wrapper">
+                <img
+                  class="stage__image Phone"
+                  src="assets/phone/code-template.png"
+                  alt=""
+                />
+                <img
+                  class="stage__image Laptop Desktop"
+                  src="assets/unified/code-template.png"
+                  alt=""
+                />
+              </div>
+            </li>
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">4</span>«Посадка» на
+                <abbr
+                  class="CMS-abbr"
+                  title="Content Management System — системы управления сайтами"
+                  >CMS</abbr
+                >
+              </h3>
+              <p class="stage__paragraph">
+                Невозможно представить интернет-магазин без системы управления
+                сайтом. Специалисты Millenium выполнят посадку готовой верстки
+                вашего магазина на CMS №1 в странах СНГ - 1с Битрикс.<br /><br />Благодаря
+                CMS, вы просто заходите в административную панель, и, при помощи
+                понятных полей, легко управляете содержимым — редактируете
+                новости, вносите коррективы в товары, добавляет фото и
+                видеоконтент, модерируете и выполняете множество других
+                действий, которые без CMS были бы сущим кошмаром.
+              </p>
+              <div class="stage__image-wrapper">
+                <img
+                  class="stage__image Phone"
+                  src="assets/phone/order-template.png"
+                  alt=""
+                />
+                <img
+                  class="stage__image Laptop Desktop"
+                  src="assets/unified/order-template.png"
+                  alt=""
+                />
+              </div>
+            </li>
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">5</span>Тестирование и
+                доработка
+              </h3>
+              <p class="stage__paragraph">
+                Чтобы избежать проблем во время использования сайта, на данном
+                этапе мы отрабатываем все возможные сценарии взаимодействия
+                пользователей с сайтом. Это позволяет вовремя выявить ошибки и
+                устранить их. Мы тестируем usability и безопасность сайта,
+                проверяем скорость загрузки страниц, работу форм обратной связи
+                и интерактивных элементов, отображение страниц на разных
+                устройствах. Это позволяет на 100% гарантировать
+                функциональность ресурса.
+              </p>
+            </li>
+            <li class="research-section__stage stage">
+              <h3 class="stage__header">
+                <span class="stage__green-number">6</span>Запуск сайта
+              </h3>
+              <p class="stage__paragraph">
+                Когда все проверено и выполнены все нужные доработки, остается
+                лишь выполнить грамотный запуск сайта. Наши специалисты сверяют
+                всё по чек-листу, чтобы избежать неприятностей и получить на
+                выходе идеальный интернет-магазин с высокой конверсией. Сайт от
+                профессионалов Millenium позволит вам легко привлекать новых
+                клиентов и станет достойным лицом вашей компании в интернете.
+              </p>
+            </li>
+          </ol>
+          <div class="research-section__image-wrapper">
+            <img
+              class="research-section__brainstorming-on-coworking-image Phone Laptop"
+              src="assets/unified/brainstorming-on-coworking.jpg"
+              alt=""
+            />
+            <img
+              class="research-section__brainstorming-on-coworking-image Desktop"
+              src="assets/desktop/brainstorming-on-coworking.jpg"
+              alt=""
+            />
+          </div>
+        </section>
+        <section class="main__call-us-section call-us-section">
+          <div class="call-us-section__inner-wrapper">
+            <h1 class="call-us-section__header">Компания Millenium-</h1>
+            <p class="call-us-section__paragraph">
+              Это дорогая и долгая разработка интернет-магазинов на 1С Битрикс!
+              Нельзя сделать <b>качественный</b> цифровой продукт за дешево и
+              быстро!<br /><br />Мы создадим интернет-магазин с нуля. Заказчику
+              не придется искать других IT-специалистов для дальнейшей настройки
+              и запуска сайта. Мы настроим сервисы, интегрируем модули для
+              онлайн-торговли, добавим контент и товары. Работы по созданию
+              интернет-магазина с нуля ведутся только после анализа ниши
+              бизнеса.
+            </p>
+            <div class="call-us-section__form-wrapper">
+              <form class="call-us-section__call-us-form call-us-form">
+                <h1 class="call-us-form__header">
+                  Звоните нам по телефону<br /><a
+                    href="tel:+74957926669"
+                    class="call-us-form__header"
+                  >
+                    +7 (495) 792-66-69</a
+                  >
+                </h1>
+                <p class="call-us-form__paragraph">
+                  или закажите обратный звонок чтобы получить ответы на все
+                  интересующие вас вопросы.
+                </p>
+                <input
+                  class="call-us-form__user-name-input"
+                  type="text"
+                  name="user-name"
+                  id="call-us-user-name"
+                  placeholder="Введите ваше имя"
+                />
+                <input
+                  class="call-us-form__user-number-input"
+                  type="text"
+                  name="user-number"
+                  id="call-us-user-number"
+                  placeholder="+ 7 (999) 999 99 99"
+                />
+                <button class="call-us-form__call-me-button">
+                  Перезвоните мне
+                  <img
+                    class="call-us-section__donut"
+                    src="assets/unified/donut.svg"
+                    alt=""
+                  />
+                </button>
+                <input
+                  class="call-us-form__confidentiality-checkbox"
+                  type="checkbox"
+                  name="checkbox-state"
+                  id="confidentiality-checkbox"
+                />
+                <label
+                  for="confidentiality-checkbox"
+                  class="call-us-form__confidentiality-label"
+                  ><span class="call-us-form__confidentiality-label-accent"
+                    >Согласен/а на</span
+                  >
+                  обработку персональных данных</label
+                >
+                <img
+                  class="call-us-section__cube"
+                  src="assets/unified/cube.svg"
+                  alt=""
+                />
+              </form>
+            </div>
+            <img
+              class="call-us-section__octagon"
+              src="assets/unified/octagon.svg"
+              alt=""
+            />
+            <img
+              class="call-us-section__line"
+              src="assets/unified/line.svg"
+              alt=""
+            />
+            <img
+              class="call-us-section__cringe"
+              src="assets/unified/cringe.svg"
+              alt=""
+            />
+          </div>
+        </section>
       </main>
+      <footer class="footer">
+        <h1 class="footer__header">Напишите нам</h1>
+        <a class="footer__link" href="mailto:info@millenium.ru"
+          >info@millenium.ru</a
+        >
+        <div class="footer__line"></div>
+        <button class="unified-cost-button" id="footer__unified-cost-button">
+          Заказать звонок
+        </button>
+        <address class="footer__social">
+          <div class="footer__social-wrapper">
+            <a class="footer__telegram-link" href="https://web.telegram.org/"
+              ><img
+                class="footer__telegram-link-image"
+                src="assets/unified/footer-telegram-icon.svg"
+                alt=""
+            /></a>
+            <a class="footer__phone-link" href="tel:+74957926669"
+              ><img
+                class="footer__phone-link-image"
+                src="assets/unified/footer-phone-icon.svg"
+                alt="" />
+              <img
+                class="footer__phone-link-background"
+                src="assets/unified/footer-phone-background.svg"
+                alt=""
+            /></a>
+          </div>
+          <p class="footer__physical-address">
+            Москва, ул. Профсоюзная 76, БЦ «ГАЛЕРЕЯ 76» 2 этаж
+          </p>
+          <a href="tel:+74957926669" class="footer__address-link"
+            >+7 (495) 792-66-69<br />пн-пт 10:00–19:00</a
+          >
+        </address>
+        <div class="footer__logo-wrapper">
+          <img
+            class="footer__logo-image"
+            src="assets/unified/footer-logo.svg"
+            alt=""
+          />
+        </div>
+        <p class="footer__copyright-paragraph">
+          © 2018–2021 | Millenium - создание интернет-магазинов на 1С Битрикс
+        </p>
+        <button class="footer__confidentiality-paragraph">
+          Политика конфиденциальности
+        </button>
+      </footer>
     </div>
-    <div class="order-wrapper">
+
+    <div class="order-wrapper hidden">
       <div class="order">
         <button class="order__close-button">
           <img
@@ -336,18 +827,22 @@
         </button>
         <h1 class="order__header">Заявка на консультацию</h1>
         <form class="order__form">
-          <label for="fname">Ваше имя</label>
+          <label for="user-name" class="order__user-name-label">Ваше имя</label>
           <input
+            class="order__user-name-input"
             type="text"
-            id="fname"
-            name="fname"
+            name="user-name"
+            id="user-name"
             placeholder="Введите ваше имя"
           />
-          <label for="lname">Номер телефона</label>
+          <label for="user-number" class="order__user-number-label"
+            >Номер телефона</label
+          >
           <input
+            class="order__user-number-input"
             type="text"
-            id="lname"
-            name="lname"
+            name="user-number"
+            id="user-number"
             placeholder="+ 7 (999) 999 99 99"
           />
           <button class="order__send-button">Отправить</button>
@@ -355,177 +850,20 @@
             Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
             персональных данных и соглашаюсь c политикой конфиденциальности
           </p>
-          <img class="order__image" src="" />
-        </form>
-      </div>
-    </div>
-    <div class="order-wrapper">
-      <div class="order">
-        <button class="order__close-button">
-          <img
-            class="order__close-button-image"
-            src="assets/unified/order-close-button.svg"
-            alt=""
-          />
-        </button>
-        <h1 class="order__header">Заявка на консультацию</h1>
-        <form class="order__form">
-          <label for="fname">Ваше имя</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Введите ваше имя"
-          />
-          <label for="lname">Номер телефона</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="+ 7 (999) 999 99 99"
-          />
-          <button class="order__send-button">Отправить</button>
-          <p class="order__confidentiality-paragraph">
-            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-            персональных данных и соглашаюсь c политикой конфиденциальности
-          </p>
-          <img class="order__image" src="" />
-        </form>
-      </div>
-    </div>
-    <div class="order-wrapper">
-      <div class="order">
-        <button class="order__close-button">
-          <img
-            class="order__close-button-image"
-            src="assets/unified/order-close-button.svg"
-            alt=""
-          />
-        </button>
-        <h1 class="order__header">Заявка на консультацию</h1>
-        <form class="order__form">
-          <label for="fname">Ваше имя</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Введите ваше имя"
-          />
-          <label for="lname">Номер телефона</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="+ 7 (999) 999 99 99"
-          />
-          <button class="order__send-button">Отправить</button>
-          <p class="order__confidentiality-paragraph">
-            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-            персональных данных и соглашаюсь c политикой конфиденциальности
-          </p>
-          <img class="order__image" src="" />
-        </form>
-      </div>
-    </div>
-    <div class="order-wrapper">
-      <div class="order">
-        <button class="order__close-button">
-          <img
-            class="order__close-button-image"
-            src="assets/unified/order-close-button.svg"
-            alt=""
-          />
-        </button>
-        <h1 class="order__header">Заявка на консультацию</h1>
-        <form class="order__form">
-          <label for="fname">Ваше имя</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Введите ваше имя"
-          />
-          <label for="lname">Номер телефона</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="+ 7 (999) 999 99 99"
-          />
-          <button class="order__send-button">Отправить</button>
-          <p class="order__confidentiality-paragraph">
-            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-            персональных данных и соглашаюсь c политикой конфиденциальности
-          </p>
-          <img class="order__image" src="" />
-        </form>
-      </div>
-    </div>
-    <div class="order-wrapper">
-      <div class="order">
-        <button class="order__close-button">
-          <img
-            class="order__close-button-image"
-            src="assets/unified/order-close-button.svg"
-            alt=""
-          />
-        </button>
-        <h1 class="order__header">Заявка на консультацию</h1>
-        <form class="order__form">
-          <label for="fname">Ваше имя</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Введите ваше имя"
-          />
-          <label for="lname">Номер телефона</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="+ 7 (999) 999 99 99"
-          />
-          <button class="order__send-button">Отправить</button>
-          <p class="order__confidentiality-paragraph">
-            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-            персональных данных и соглашаюсь c политикой конфиденциальности
-          </p>
-          <img class="order__image" src="" />
-        </form>
-      </div>
-    </div>
-    <div class="order-wrapper">
-      <div class="order">
-        <button class="order__close-button">
-          <img
-            class="order__close-button-image"
-            src="assets/unified/order-close-button.svg"
-            alt=""
-          />
-        </button>
-        <h1 class="order__header">Заявка на консультацию</h1>
-        <form class="order__form">
-          <label for="fname">Ваше имя</label>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Введите ваше имя"
-          />
-          <label for="lname">Номер телефона</label>
-          <input
-            type="text"
-            id="lname"
-            name="lname"
-            placeholder="+ 7 (999) 999 99 99"
-          />
-          <button class="order__send-button">Отправить</button>
-          <p class="order__confidentiality-paragraph">
-            Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
-            персональных данных и соглашаюсь c политикой конфиденциальности
-          </p>
-          <img class="order__image" src="" />
+          <div class="order__image-wrapper">
+            <div class="order__lock-icon-wrapper">
+              <img
+                class="order__lock-icon"
+                src="assets\unified\order-lock-icon.svg"
+                alt=""
+              />
+            </div>
+            <img
+              class="order__image"
+              src="assets\unified\magazine-image.png"
+              alt=""
+            />
+          </div>
         </form>
       </div>
     </div>
