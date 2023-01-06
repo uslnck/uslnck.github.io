@@ -2911,10 +2911,6 @@
     line-height: 15px;
   }
 
-  .header__address-main-text:hover {
-    text-decoration: none;
-  }
-
   .header__call-button {
     background-color: #6b5af9;
     border-radius: 5px;
