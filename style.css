@@ -3592,10 +3592,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-left: -160px;
+    margin-left: -140px;
     padding: 7% 140px;
     position: relative;
-    width: calc(100% + 310px);
+    width: calc(100% + 280px);
   }
 
   .footer__header {
