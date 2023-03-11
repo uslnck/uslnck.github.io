@@ -12,6 +12,7 @@ const debounce = (fn, debounceTime) => {
 const delayedFetch = debounce(fetchUsers, 400);
 
 let suggestionsArr = [];
+let parenthesisFlag;
 function fetchUsers() {
   if (input.value.trim()) {
     fetch(
@@ -22,9 +23,16 @@ function fetchUsers() {
         .then((res) => {
           if (suggestionsArr[1] || 0) suggestionsArr = [];
           for (let i = 0; i < suggestions.length; i++) {
-            suggestions[i].textContent =
-              res.items[i].name + ' ' + `(${res.items[i].owner.login})`;
-            suggestionsArr.push(res.items[i]);
+            if (res.items[i].name === res.items[i + 1].name) {
+              suggestions[i].textContent =
+                res.items[i].name + ' ' + `(${res.items[i].owner.login})`;
+              suggestionsArr.push(res.items[i]);
+              parenthesisFlag = true;
+            } else {
+              suggestions[i].textContent = res.items[i].name;
+              suggestionsArr.push(res.items[i]);
+              parenthesisFlag = false;
+            }
           }
           suggestionBox.style.display = 'block';
           // console.log(res);
@@ -45,10 +53,17 @@ function fetchUsers() {
   }
 }
 
+let filteredArr = [];
 function addSuggestion(el) {
-  let filteredArr = suggestionsArr.filter((item) => {
-    return el.includes(item.owner.login);
-  });
+  if (parenthesisFlag) {
+    filteredArr = suggestionsArr.filter((item) => {
+      return el.includes(item.owner.login);
+    });
+  } else {
+    filteredArr = suggestionsArr.filter((item) => {
+      return item.name === el;
+    });
+  }
   for (let i = 0; i < saveListItems.length; i++) {
     if (saveListItems[i].classList.contains('empty')) {
       saveListItems[i].classList.remove('empty');
