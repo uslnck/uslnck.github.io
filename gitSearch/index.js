@@ -15,14 +15,14 @@ let suggestionsArr = [];
 function fetchUsers() {
   if (input.value.trim()) {
     fetch(
-      `https://api.github.com/search/users?q=${input.value.trim()}&sort=score&order=desc`
+      `https://api.github.com/search/repositories?q=${input.value.trim()}`
     ).then((response) =>
       response
         .json()
         .then((res) => {
           if (suggestionsArr[1] || 0) suggestionsArr = [];
           for (let i = 0; i < suggestions.length; i++) {
-            suggestions[i].textContent = res.items[i].login;
+            suggestions[i].textContent = res.items[i].name;
             suggestionsArr.push(res.items[i]);
           }
           suggestionBox.style.display = 'block';
@@ -46,17 +46,17 @@ function fetchUsers() {
 
 function addSuggestion(el) {
   let filteredArr = suggestionsArr.filter((item) => {
-    return item.login === el;
+    return item.name === el;
   });
   for (let i = 0; i < saveListItems.length; i++) {
     if (saveListItems[i].classList.contains('empty')) {
       saveListItems[i].classList.remove('empty');
       saveListItems[i].querySelector('.name').textContent =
-        'Name: ' + filteredArr[0].login;
+        'Name: ' + filteredArr[0].name;
       saveListItems[i].querySelector('.owner').textContent =
-        'Type: ' + filteredArr[0].type;
+        'Owner: ' + filteredArr[0].owner.login;
       saveListItems[i].querySelector('.stars').textContent =
-        'ID: ' + filteredArr[0].id;
+        'Stars: ' + filteredArr[0].stargazers_count;
       break;
     }
   }
