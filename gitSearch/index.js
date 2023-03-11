@@ -22,7 +22,8 @@ function fetchUsers() {
         .then((res) => {
           if (suggestionsArr[1] || 0) suggestionsArr = [];
           for (let i = 0; i < suggestions.length; i++) {
-            suggestions[i].textContent = res.items[i].name;
+            suggestions[i].textContent =
+              res.items[i].name + ' ' + `(${res.items[i].owner.login})`;
             suggestionsArr.push(res.items[i]);
           }
           suggestionBox.style.display = 'block';
@@ -46,7 +47,7 @@ function fetchUsers() {
 
 function addSuggestion(el) {
   let filteredArr = suggestionsArr.filter((item) => {
-    return item.name === el;
+    return el.includes(item.owner.login);
   });
   for (let i = 0; i < saveListItems.length; i++) {
     if (saveListItems[i].classList.contains('empty')) {
@@ -71,9 +72,10 @@ const closeButton = document.querySelectorAll('.close');
 input.addEventListener('input', delayedFetch);
 
 suggestions.forEach((suggestion) => {
-  suggestion.addEventListener('click', (el) =>
-    addSuggestion(el.target.textContent)
-  );
+  suggestion.addEventListener('click', (el) => {
+    addSuggestion(el.target.textContent);
+    suggestionBox.style.display = 'none';
+  });
 });
 
 closeButton.forEach((button) => {
