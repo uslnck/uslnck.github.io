@@ -9,7 +9,7 @@ const debounce = (fn, debounceTime) => {
   };
 };
 
-const delayedFetch = debounce(fetchUsers, 300);
+const delayedFetch = debounce(fetchUsers, 400);
 
 let suggestionsArr = [];
 let noBefore = false;
@@ -30,11 +30,7 @@ function fetchUsers() {
               res.items[i].name !== res.items[i + 1].name
             )
               noAfter = true;
-            if (
-              res.items[i - 1] !== undefined &&
-              res.items[i].name !== res.items[i - 1].name
-            )
-              noBefore = true;
+            if (res.items[i - 1] === undefined) noBefore = true;
             if (
               noBefore &&
               res.items[i + 1] !== undefined &&
@@ -62,7 +58,7 @@ function fetchUsers() {
           }
           suggestionBox.style.display = 'block';
         })
-        .catch((e) => {
+        .catch(() => {
           for (let i = 1; i < suggestions.length; i++) {
             suggestions[i].textContent = '';
           }
