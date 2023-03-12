@@ -9,10 +9,11 @@ const debounce = (fn, debounceTime) => {
   };
 };
 
-const delayedFetch = debounce(fetchUsers, 400);
+const delayedFetch = debounce(fetchUsers, 300);
 
 let suggestionsArr = [];
-let parenthesisFlag;
+let noBefore = false;
+let noAfter = false;
 function fetchUsers() {
   if (input.value.trim()) {
     fetch(
@@ -23,22 +24,46 @@ function fetchUsers() {
         .then((res) => {
           if (suggestionsArr[1] || 0) suggestionsArr = [];
           for (let i = 0; i < suggestions.length; i++) {
-            if (res.items[i].name === res.items[i + 1].name) {
+            let done = false;
+            if (
+              res.items[i + 1] !== undefined &&
+              res.items[i].name !== res.items[i + 1].name
+            )
+              noAfter = true;
+            if (
+              res.items[i - 1] !== undefined &&
+              res.items[i].name !== res.items[i - 1].name
+            )
+              noBefore = true;
+            if (
+              noBefore &&
+              res.items[i + 1] !== undefined &&
+              res.items[i].name === res.items[i + 1].name
+            ) {
               suggestions[i].textContent =
                 res.items[i].name + ' ' + `(${res.items[i].owner.login})`;
               suggestionsArr.push(res.items[i]);
-              parenthesisFlag = true;
-            } else {
+              done = true;
+            }
+            if (
+              noAfter &&
+              res.items[i - 1] !== undefined &&
+              res.items[i].name === res.items[i - 1].name
+            ) {
+              suggestions[i].textContent =
+                res.items[i].name + ' ' + `(${res.items[i].owner.login})`;
+              suggestionsArr.push(res.items[i]);
+              done = true;
+            }
+            if (!done) {
               suggestions[i].textContent = res.items[i].name;
               suggestionsArr.push(res.items[i]);
-              parenthesisFlag = false;
             }
           }
           suggestionBox.style.display = 'block';
-          // console.log(res);
         })
-        .catch(() => {
-          for (let i = 1; i < 5; i++) {
+        .catch((e) => {
+          for (let i = 1; i < suggestions.length; i++) {
             suggestions[i].textContent = '';
           }
           suggestions[0].textContent = 'No results';
@@ -55,7 +80,7 @@ function fetchUsers() {
 
 let filteredArr = [];
 function addSuggestion(el) {
-  if (parenthesisFlag) {
+  if (el.includes('(')) {
     filteredArr = suggestionsArr.filter((item) => {
       return el.includes(item.owner.login);
     });
