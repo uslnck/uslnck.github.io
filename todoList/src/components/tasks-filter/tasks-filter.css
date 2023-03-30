@@ -1,0 +1,7 @@
+.filters li button:not(.selected) {
+  cursor: pointer;
+}
+
+.filters li button.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
