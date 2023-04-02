@@ -78,7 +78,7 @@
   word-break: break-all;
 }
 
-.todo-list li.completed label .description {
+.todo-list .completed.description {
   color: #cdcdcd;
   text-decoration: line-through;
 }
