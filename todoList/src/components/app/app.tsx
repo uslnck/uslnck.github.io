@@ -123,7 +123,7 @@ export default class App extends Component<AppProps, AppState> {
 
   addTask = (text: string) => {
     const newItem = {
-      description: text,
+      description: text.trim(),
       created: new Date(),
       id: this.maxId++,
       completed: false,
